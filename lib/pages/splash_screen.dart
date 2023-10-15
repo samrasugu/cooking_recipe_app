@@ -54,7 +54,7 @@ class SplashScreen extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                Get.to(const HomeScreen());
+                Get.to(() => const HomeScreen());
               },
               child: const Text(
                 'Get Started',
