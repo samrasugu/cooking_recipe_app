@@ -16,69 +16,87 @@ class HomeScreen extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(
               vertical: 30.0,
-              horizontal: 20.0,
+              // horizontal: 20.0,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'What would you\nlike to cook?',
-                  style: GoogleFonts.poppins(
-                    textStyle: Theme.of(context).textTheme.displaySmall,
-                    fontSize: 35,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.black,
-                    height: 1.3,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Text(
+                    'What would you\nlike to cook?',
+                    style: GoogleFonts.poppins(
+                      textStyle: Theme.of(context).textTheme.displaySmall,
+                      fontSize: 35,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.black,
+                      height: 1.3,
+                    ),
                   ),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                const CustomSearchField(),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: CustomSearchField(),
+                ),
                 const SizedBox(
                   height: 20,
                 ),
-                const Text(
-                  'Todays recipes',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Text(
+                    'Todays recipes',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                const TodaysRecipes(),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      'Recommended',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      'See All',
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: TodaysRecipes(),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                const RecommendedRecipes(),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'Recommended',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'See All',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
+                  child: RecommendedRecipes(),
+                ),
                 const SizedBox(
                   height: 20,
                 ),
