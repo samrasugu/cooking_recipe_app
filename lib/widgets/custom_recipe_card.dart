@@ -42,7 +42,7 @@ class CustomRecipeCard extends StatelessWidget {
               child: BackdropFilter(
                 filter: ui.ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
                 child: Container(
-                  height: 70,
+                  height: 80,
                   width: MediaQuery.of(context).size.width * 1 / 2,
                   padding: const EdgeInsets.all(
                     15.0,
@@ -55,7 +55,8 @@ class CustomRecipeCard extends StatelessWidget {
                       Text(
                         title,
                         style: const TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 18,
                         ),
                       ),
                       Row(
@@ -64,7 +65,7 @@ class CustomRecipeCard extends StatelessWidget {
                           Text(
                             time,
                             style: const TextStyle(
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w300,
                             ),
                           ),
                           const Text(
@@ -78,7 +79,7 @@ class CustomRecipeCard extends StatelessWidget {
                           Text(
                             level,
                             style: const TextStyle(
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w300,
                             ),
                           ),
                         ],

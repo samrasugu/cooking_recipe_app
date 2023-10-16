@@ -1,6 +1,6 @@
-import 'package:cooking_recipe_app/value_objects/app_asset_strings.dart';
-import 'package:cooking_recipe_app/widgets/custom_recipe_card.dart';
 import 'package:cooking_recipe_app/widgets/custom_search_field.dart';
+import 'package:cooking_recipe_app/widgets/recommended_recipes.dart';
+import 'package:cooking_recipe_app/widgets/todays_recipes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,6 +19,7 @@ class HomeScreen extends StatelessWidget {
               horizontal: 20.0,
             ),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -50,24 +51,37 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                SizedBox(
-                  height: 300,
-                  child: ListView.builder(
-                    itemCount: 5,
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    physics: const AlwaysScrollableScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return const CustomRecipeCard(
-                        imagePath: friesImage,
-                        title: 'Penne Fries',
-                        time: '30 MIN',
-                        level: 'EASY',
-                        rating: '4.8',
-                      );
-                    },
-                  ),
-                )
+                const TodaysRecipes(),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      'Recommended',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      'See All',
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const RecommendedRecipes(),
+                const SizedBox(
+                  height: 20,
+                ),
               ],
             ),
           ),
