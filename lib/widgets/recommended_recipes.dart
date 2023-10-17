@@ -1,5 +1,7 @@
+import 'package:cooking_recipe_app/pages/recipe_details_screen.dart';
 import 'package:cooking_recipe_app/widgets/recommended_recipe_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RecommendedRecipes extends StatelessWidget {
   const RecommendedRecipes({super.key});
@@ -12,7 +14,11 @@ class RecommendedRecipes extends StatelessWidget {
       scrollDirection: Axis.vertical,
       clipBehavior: Clip.none,
       itemBuilder: (context, index) {
-        return const RecommendedRecipeWidget();
+        return GestureDetector(
+            onTap: () {
+              Get.to(() => const RecipeDetailsScreen());
+            },
+            child: const RecommendedRecipeWidget());
       },
     );
   }
